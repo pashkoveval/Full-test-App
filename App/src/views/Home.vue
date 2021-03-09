@@ -75,11 +75,11 @@ export default {
   components: {
     ProductList,
     BanerBlack,
-    BanerSubscr,
+    BanerSubscr
   },
   data() {
     return {
-      scrollHeight: false,
+      scrollHeight: false
     };
   },
   methods: {
@@ -89,12 +89,12 @@ export default {
       } else {
         this.scrollHeight = false;
       }
-    },
+    }
   },
   mounted() {},
   created() {
     window.addEventListener("scroll", this.onScroll);
-  },
+  }
 };
 </script>
 
@@ -300,4 +300,3 @@ export default {
   }
 }
 </style>
-

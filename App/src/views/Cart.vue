@@ -14,11 +14,11 @@ export default {
   name: "Cart",
   components: {
     CartList,
-    BanerSubscr,
+    BanerSubscr
   },
   props: {},
   methods: {},
-  computed: {},
+  computed: {}
 };
 </script>
 

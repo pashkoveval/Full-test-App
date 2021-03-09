@@ -24,14 +24,20 @@
         </button>
       </div>
     </div>
-    <div class="catalog-item-second__block">
+    <router-link
+      :to="{
+        name: 'Product',
+        params: { id: item.id, item: item },
+      }"
+      class="catalog-item-second__block"
+    >
       <h3 class="catalog-item-title">{{ item.productName }}</h3>
       <p>
         Known for her sculptural takes on traditional tailoring, Australian
         arbiter of cool Kym Ellery teams up with Moda Operandi.
       </p>
       <span class="catalog-item-price">$ {{ item.price }}</span>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -54,8 +60,6 @@ export default {
       let coractDate = new Date();
       this.item.date = coractDate;
       this.$emit("addToCart", this.item);
-      console.log(this.item);
-      
     },
   },
 };
@@ -131,6 +135,7 @@ export default {
     width: 100%;
     text-align: left;
     padding: 25px;
+    text-decoration: none;
     h3 {
       font-weight: bold;
       color: #000;
