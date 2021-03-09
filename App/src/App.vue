@@ -23,10 +23,7 @@ export default {
       serch: "",
     };
   },
-  methods: {
-
-  },
-  
+  methods: {},
 };
 </script>
 <style lang="scss">

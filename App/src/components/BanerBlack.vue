@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: "baner-black",
+  name: "baner-black"
 };
 </script>
 
@@ -47,7 +47,7 @@ export default {
     padding: 48px 0;
     max-width: 1140px;
     margin: 0 auto;
-    @media (max-width: 768px){
+    @media (max-width: 768px) {
       flex-direction: column;
       justify-content: center;
       align-items: center;

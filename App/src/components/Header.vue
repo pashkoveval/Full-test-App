@@ -2,7 +2,7 @@
   <div class="header">
     <div class="nav">
       <div class="left">
-        <router-link to="/">
+        <router-link :to="{ name: 'Home' }">
           <img src="../assets/logo.svg" alt="" />
         </router-link>
         <form action="#" class="serch">
@@ -33,7 +33,7 @@
             </svg>
           </span>
           <router-link
-            to="/catalog"
+            :to="{ name: 'Catalog' }"
             v-else
             @click="serching = !serching"
             class="serch-btn"
@@ -68,7 +68,7 @@
             />
           </svg>
         </button>
-        <router-link class="user" to="about">
+        <router-link class="user" :to="{ name: 'About' }">
           <svg
             width="29"
             height="29"
@@ -82,7 +82,7 @@
             />
           </svg>
         </router-link>
-        <router-link class="cart" to="cart">
+        <router-link class="cart" :to="{ name: 'Cart' }">
           <svg
             width="33"
             height="29"
@@ -139,7 +139,7 @@ export default {
       serching: false,
       serchingBtn: true,
       searchValue: "",
-      menu: false,
+      menu: false
     };
   },
   methods: {
@@ -154,7 +154,7 @@ export default {
         document.body.classList.remove(".stop");
         document.body.style.overflow = "visible";
       }
-    },
+    }
   },
   computed: {
     ...mapGetters(["CART", "SEARCH_VALUE"]),
@@ -165,7 +165,7 @@ export default {
         for (let item of this.CART) {
           result.push(+item.quantity);
         }
-        result = result.reduce(function (quantity, el) {
+        result = result.reduce(function(quantity, el) {
           return quantity + el;
         });
 
@@ -173,11 +173,11 @@ export default {
       } else {
         return 0;
       }
-    },
+    }
   },
   mounted() {
     this.GET_GOODS_FROM_API_CART();
-  },
+  }
 };
 </script>
 

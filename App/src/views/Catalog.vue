@@ -10,11 +10,11 @@ import ProductList from "../components/ProductList.vue";
 export default {
   name: "catalog",
   components: {
-    ProductList,
+    ProductList
   },
   data() {
     return {
-      scrollHeight: false,
+      scrollHeight: false
     };
   },
   methods: {
@@ -24,11 +24,11 @@ export default {
       } else {
         this.scrollHeight = false;
       }
-    },
+    }
   },
   created() {
     window.addEventListener("scroll", this.onScroll);
-  },
+  }
 };
 </script>
 

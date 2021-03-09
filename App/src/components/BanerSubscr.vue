@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: "Baner-Sub",
+  name: "Baner-Sub"
 };
 </script>
 

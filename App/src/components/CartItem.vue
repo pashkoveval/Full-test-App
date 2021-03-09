@@ -1,6 +1,14 @@
 <template>
-  <div class="cart-item" :id="index">
-    <a href="#"><img :src="item.img" alt="img" /></a>
+  <div class="cart-item">
+    <router-link
+      class="link"
+      :to="{
+        name: 'Product',
+        params: { id: item.id, item: item },
+      }"
+    >
+      <img :src="item.img" alt="img" />
+    </router-link>
     <div class="about">
       <span class="title">{{ item.productName }}</span>
       <div class="description">
@@ -97,7 +105,7 @@ export default {
     position: relative;
     margin-bottom: 40px;
     margin-right: 15px;
-    a {
+    .link {
       max-width: 262px;
       max-height: 306px;
       img {
@@ -209,7 +217,7 @@ export default {
           width: 100%;
         }
       }
-      .quantity{
+      .quantity {
         font-size: 14px;
         margin-right: 15px;
       }

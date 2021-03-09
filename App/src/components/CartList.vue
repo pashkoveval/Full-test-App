@@ -43,7 +43,12 @@ export default {
     ShippingAdresCart,
   },
   methods: {
-    ...mapActions(["DELET_FROM_CART", "GET_GOODS_FROM_API_CART", "CLEAR_CART"]),
+    ...mapActions([
+      "DELET_FROM_CART",
+      "GET_GOODS_FROM_API_CART",
+      "CLEAR_CART",
+      "GET_GOODS_FROM_API",
+    ]),
     deleteFromCart(index) {
       const indexDel = { index: index };
       this.DELET_FROM_CART(indexDel);
@@ -55,10 +60,11 @@ export default {
   },
   mounted() {
     this.GET_GOODS_FROM_API_CART();
+    this.GET_GOODS_FROM_API();
   },
 
   computed: {
-    ...mapGetters(["CART"]),
+    ...mapGetters(["CART", "PRODUCTS"]),
   },
 };
 </script>

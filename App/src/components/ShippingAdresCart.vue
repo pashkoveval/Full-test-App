@@ -56,7 +56,7 @@ export default {
       empty: "The field must be filled",
       errorC: false,
       errorS: false,
-      errorZ: false,
+      errorZ: false
     };
   },
   methods: {
@@ -84,7 +84,7 @@ export default {
         console.log("aaa");
         buyALL.disabled = false;
       }
-    },
+    }
   },
   computed: {
     ...mapGetters(["CART"]),
@@ -96,7 +96,7 @@ export default {
           result.push(item.price * item.quantity);
         }
 
-        result = result.reduce(function (sum, el) {
+        result = result.reduce(function(sum, el) {
           return sum + el;
         });
 
@@ -104,11 +104,11 @@ export default {
       } else {
         return 0;
       }
-    },
+    }
   },
   mounted() {
-    this.dis()
-  },
+    this.dis();
+  }
 };
 </script>
 

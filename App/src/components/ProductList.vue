@@ -31,23 +31,23 @@ export default {
       noRESPONS: true,
       errorClass: true,
       filtredProducts: [],
-      spliceArrProducts: true,
+      spliceArrProducts: true
     };
   },
   components: {
-    ProductItem,
+    ProductItem
   },
 
   methods: {
     ...mapActions(["GET_GOODS_FROM_API", "ADD_TO_CART"]),
 
     addToCart(data) {
-      this.ADD_TO_CART(data);      
+      this.ADD_TO_CART(data);
     },
     serchProsuctByTextInput(value) {
       this.filtredProducts = [...this.PRODUCTS];
       if (value) {
-        this.filtredProducts = this.filtredProducts.filter((item) => {
+        this.filtredProducts = this.filtredProducts.filter(item => {
           const regexp = new RegExp(value, "i");
           const match = item.productName.match(regexp);
           return !!match;
@@ -55,7 +55,7 @@ export default {
       }
     },
     moreProducts() {
-      if (this.$router.path !== '/catalog') {
+      if (this.$router.path !== "/catalog") {
         if (this.spliceArrProducts) {
           this.filtredProducts.splice(6);
         } else {
@@ -64,10 +64,10 @@ export default {
       } else {
         this.spliceArrProducts = false;
       }
-    },
+    }
   },
   mounted() {
-    this.GET_GOODS_FROM_API().then((respons) => {
+    this.GET_GOODS_FROM_API().then(respons => {
       if (respons.data) {
         this.noRESPONS = !this.noRESPONS;
         this.errorClass = !this.errorClass;
@@ -77,7 +77,7 @@ export default {
     });
   },
   computed: {
-    ...mapGetters(["PRODUCTS", "SEARCH_VALUE"]),
+    ...mapGetters(["PRODUCTS", "SEARCH_VALUE"])
   },
   watch: {
     SEARCH_VALUE() {
@@ -85,8 +85,8 @@ export default {
     },
     spliceArrProducts() {
       this.moreProducts();
-    },
-  },
+    }
+  }
 };
 </script>
 
