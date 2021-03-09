@@ -11,7 +11,6 @@ import {
   IconsPlugin
 } from 'bootstrap-vue'
 Vue.config.productionTip = false;
-
 new Vue({
   router,
   store,

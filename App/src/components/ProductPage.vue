@@ -80,6 +80,7 @@ export default {
       }
       return (this.threeItems = result);
     },
+    
   },
   computed: {
     ...mapGetters(["PRODUCTS"]),
